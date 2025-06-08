@@ -17,7 +17,7 @@ const app=express()
 //to make input json
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({ origin: ["http://localhost:5173"], credentials: true }))
+app.use(cors({ origin: ["http://localhost:5173","https://mynote-app0.netlify.app"], credentials: true }))
 
 app.listen(3000, '0.0.0.0',() =>{
     console.log("server is running on port 3000")
