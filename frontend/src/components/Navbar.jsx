@@ -29,7 +29,7 @@ const Navbar = ({ userInfo, onSearchNote,handleClearSearch }) => {
     try {
       dispatch(signoutStart())
 
-      const res = await axios.get("http://localhost:3000/api/auth/signout", {
+      const res = await axios.get("https://backend-deployment-r1co.onrender.com/api/auth/signout", {
         withCredentials: true,
       })
 
