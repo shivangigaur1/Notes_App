@@ -48,7 +48,8 @@ try{
 
     const { password: pass, ...rest } = validUser._doc
 
-    res.cookie("access_token", token, { httpOnly: true }).status(200).json({
+    res.cookie("access_token", token, { httpOnly: true ,secure: true,
+  sameSite: "None",}).status(200).json({
       success: true,
       message: "Login Successful!",
       rest,
@@ -60,7 +61,11 @@ try{
 
 export const signout = async (req, res, next) => {
   try {
-    res.clearCookie("access_token")
+   res.clearCookie("access_token", {
+      sameSite: "None",
+      secure: true,
+      httpOnly: true,
+    })
 
     res.status(200).json({
       success: true,
